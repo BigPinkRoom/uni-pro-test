@@ -1,1 +1,148 @@
 /* main */
+.main {
+  margin: 25px 0;
+}
+
+.main__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $max-xl) {
+    flex-direction: column;
+  }
+}
+
+.main__news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38.5%;
+  height: 516px;
+  padding: 15px;
+
+  background-color: $color-gray;
+
+  &:hover {
+    background-color: $color-gray-lighten;
+  }
+
+  @media (max-width: $max-xl) {
+    width: 100%;
+    max-height: 309px;
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $max-lg) {
+    height: 394px;
+  }
+
+  @media (max-width: $max-sm) {
+    height: 330px;
+  }
+}
+
+.main__information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  height: 516px;
+  padding: 15px;
+  margin-bottom: 25px;
+
+  background-color: $color-gray;
+
+  &:hover {
+    color: $color-blue;
+
+    background-color: $color-gray-lighten;
+  }
+
+  @media (max-width: $max-xl) {
+    width: 100%;
+    max-height: 182px;
+  }
+
+  @media (max-width: $max-md) {
+    max-height: 45px;
+  }
+
+  @media (max-width: $max-sm) {
+    max-height: 45px;
+  }
+}
+
+.main__information--active {
+  color: $color-blue;
+
+  background-color: $color-gray-lighten;
+
+  @media (max-width: $max-lg) {
+    max-height: 309px;
+
+    color: $color-blue;
+
+    background-color: $color-gray-lighten;
+  }
+
+  @media (max-width: $max-md) {
+    max-height: 193px;
+
+    color: $color-blue;
+
+    background-color: $color-gray-lighten;
+  }
+
+  @media (max-width: $max-sm) {
+    max-height: 193px;
+
+    color: $color-blue;
+
+    background-color: $color-gray-lighten;
+  }
+}
+
+.main-panel {
+  display: none;
+  width: 100%;
+  margin: -25px 0;
+  padding: 25px 0;
+
+  background-color: $color-gray-lighten-2;
+
+  @media (max-width: $max-xl) {
+    display: flex;
+  }
+}
+
+.main-panel__wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.main-panel__arrow {
+  width: 44px;
+  height: 44px;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  background-color: $color-gray;
+}
+
+.main-panel__arrow--right {
+  margin-right: 20px;
+}
+
+.main-panel__inner {
+  width: 100%;
+
+  background-color: $color-white;
+}
+
+.main-panel__button {
+  width: 44px;
+  height: 44px;
+
+  background-color: $color-gray;
+}

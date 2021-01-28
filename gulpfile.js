@@ -19,19 +19,19 @@ let fs = require('fs');
 let path = {
   build: {
     html: 'dist/',
-    // js: 'dist/assets/js/',
+    js: 'dist/assets/js/',
     css: 'dist/assets/css/',
     images: 'dist/assets/img/',
   },
   src: {
     html: 'src/*.html',
-    // js: 'src/assets/js/*.js',
+    js: 'src/assets/js/*.js',
     css: 'src/assets/sass/style.scss',
     images: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico}',
   },
   watch: {
     html: 'src/**/*.html',
-    // js: 'src/assets/js/**/*.js',
+    js: 'src/assets/js/**/*.js',
     css: 'src/assets/sass/**/*.scss',
     images: 'src/assets/img/**/*.{jpg,jpeg,png,svg,gif,ico}',
   },
@@ -102,21 +102,21 @@ function css() {
     .pipe(browsersync.stream());
 }
 
-// function js() {
-//   return src(path.src.js, { base: 'src/assets/js' })
-//     .pipe(plumber())
-//     .pipe(rigger())
-//     .pipe(gulp.dest(path.build.js))
-//     .pipe(uglify())
-//     .pipe(
-//       rename({
-//         suffix: '.min',
-//         extname: '.js',
-//       })
-//     )
-//     .pipe(dest(path.build.js))
-//     .pipe(browsersync.stream());
-// }
+function js() {
+  return src(path.src.js, { base: 'src/assets/js' })
+    .pipe(plumber())
+    .pipe(rigger())
+    .pipe(gulp.dest(path.build.js))
+    .pipe(uglify())
+    .pipe(
+      rename({
+        suffix: '.min',
+        extname: '.js',
+      })
+    )
+    .pipe(dest(path.build.js))
+    .pipe(browsersync.stream());
+}
 
 function images() {
   return src(path.src.images).pipe(imagemin()).pipe(dest(path.build.images));
@@ -133,13 +133,13 @@ function cb() {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
-  //   gulp.watch([path.watch.js], js);
+  gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.images], images);
 }
 
 const build = gulp.series(
   clean,
-  //   gulp.parallel(html, js, images),
+  gulp.parallel(html, js, images),
   gulp.parallel(html, images),
   css,
   browserSync
@@ -149,7 +149,7 @@ const watch = gulp.parallel(build, watchFiles);
 /* Export Tasks */
 exports.html = html;
 exports.css = css;
-// exports.js = js;
+exports.js = js;
 exports.images = images;
 exports.clean = clean;
 exports.build = build;
