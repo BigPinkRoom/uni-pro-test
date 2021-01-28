@@ -4,6 +4,11 @@ $(document).ready(function () {
 
   $accordion.on('click', function (event) {
     event.preventDefault();
-    $accordion.toggleClass('main__information--active');
+
+    $accordion.each(function (i, elem) {
+      $(elem).removeClass('main__information--active');
+    });
+
+    $(event.target).toggleClass('main__information--active');
   });
 });
