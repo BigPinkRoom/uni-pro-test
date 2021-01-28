@@ -3,6 +3,8 @@
 .header {
   padding: 20px 0 23px;
 
+  background-color: $color-white;
+
   @media (max-width: $max-xl) {
     padding: 20px 0 16px;
   }
@@ -13,6 +15,8 @@
 
   @media (max-width: $max-sm) {
     padding: 10px 0 10.9px;
+
+    background-color: $color-white;
   }
 }
 

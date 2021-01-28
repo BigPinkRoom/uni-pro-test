@@ -6,6 +6,10 @@ body {
   font-size: $font-size-default;
   font-weight: $font-weight-default;
   line-height: $line-height-default;
+
+  @media (max-width: $max-sm) {
+    background-color: $color-gray-lighten-2;
+  }
 }
 
 *,
