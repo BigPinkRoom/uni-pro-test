@@ -55,6 +55,7 @@ function browserSyncReload(done) {
 
 function html() {
   panini.refresh();
+
   return src(path.src.html, { base: 'src/' })
     .pipe(plumber())
     .pipe(

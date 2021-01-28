@@ -1,26 +1,22 @@
 /* default styles */
-$font-color-default: #212121;
-$font-family-default: 'Open Sans', sans-serif;
-$font-size-default: 15px;
+$font-color-default: #000;
+$font-family-default: 'Roboto', sans-serif;
+$font-size-default: 18px;
 $font-weight-default: 400;
-$line-height-default: 1.5;
+$line-height-default: 21.09px;
 
 $color-white: #fff;
-$color-turquoise: #e4fdf9;
-$color-turquoise-dark: #00897b;
-$color-gray: #f0f1f1;
-$color-blue: #3949ab;
+$color-blue: #0078dc;
+$color-gray: #c4c4c4;
+$color-gray-lighten: #efefef;
+$color-gray-lighten-2: #f0f0f0;
+$color-yellow: #fdff8c;
 $color-black: #000000;
 
-$shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.35);
-$shadow-light: 0px 3px 10px rgba(0, 0, 0, 0.3);
-
-$border-radius: 10px;
-
-$max-sm: 575.98px;
-$max-md: 767.98px;
-$max-lg: 991.98px;
-$max-xl: 1199.98px;
+$max-sm: 359.98px;
+$max-md: 413.98px;
+$max-lg: 767.98px;
+$max-xl: 959.98px;
 
 /* font awesome */
 $fa-font-path: '../fonts/webfonts/';
@@ -31,12 +27,12 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1200px,
 );
 
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1200px
+  xl: 1200px,
 );
