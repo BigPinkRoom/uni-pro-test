@@ -1,17 +1,41 @@
 /* header */
 
 .header {
-  padding: 20px 0;
+  padding: 20px 0 23px;
+
+  @media (max-width: $max-xl) {
+    padding: 20px 0 16px;
+  }
+
+  @media (max-width: $max-md) {
+    padding: 10px 0 11.9px;
+  }
+
+  @media (max-width: $max-sm) {
+    padding: 10px 0 10.9px;
+  }
 }
 
 .header__wrapper {
+  display: flex;
+  justify-content: space-between;
   padding: 0 20px 8px;
+
+  @media (max-width: $max-xl) {
+    align-items: center;
+    padding: 0;
+  }
 }
 
 // logo
 .logo {
   width: 105px;
-  height: 62px;
+  height: 63.2px;
+
+  @media (max-width: $max-md) {
+    width: 70px;
+    height: 42.15px;
+  }
 }
 
 // menu
@@ -20,4 +44,20 @@
   height: 39px;
 
   background-color: $color-blue;
+
+  @media (max-width: $max-xl) {
+    display: none;
+  }
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  display: none;
+
+  background-color: $color-blue;
+
+  @media (max-width: $max-xl) {
+    display: block;
+  }
 }
